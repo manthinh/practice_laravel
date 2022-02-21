@@ -1,0 +1,13 @@
+- 初回ビルド
+docker compose up -d --build
+
+- 初回プロジェクト作成
+composer create-project --prefer-dist "laravel/laravel=8.*" .
+
+
+- composer create-project --prefer-dist
+--prefer-dist zipでダウンロードするため高速
+
+- composer の–prefer-distってよく使うけど何してる？
+composer create-project コマンドでメモリ足りない問題の対策
+

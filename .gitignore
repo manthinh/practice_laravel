@@ -1,0 +1,4 @@
+/infra
+docker-compose.yml
+.DS_Store
+/backend/public/*

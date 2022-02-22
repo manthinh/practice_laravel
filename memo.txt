@@ -11,3 +11,29 @@ composer create-project --prefer-dist "laravel/laravel=8.*" .
 - composer の–prefer-distってよく使うけど何してる？
 composer create-project コマンドでメモリ足りない問題の対策
 
+
+ファイルの探し方
+command P を押す
+
+いじるファイル：todoIndex.blade.phpとtodoIndex.scss
+
+
+通常運用
+・dockerの停止
+docker-compose down
+
+・dockerのスタート
+docker-compose up -d
+
+・dockerが動いているか
+docker-compose ps
+
+・コンテナに入る
+docker compose exec app bash
+
+・cssを反映させる
+npm run watch
+
+・npm run watch を中止させる
+コントロール + C
+

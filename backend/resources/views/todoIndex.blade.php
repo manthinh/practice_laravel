@@ -14,11 +14,9 @@
                 <div class="form">
                     <label for= "uname"></label>
                     <input type= "text" id="uname" name= "name">
+                    <button>追加</button>
                 </div>
 
-                <div class="todoadd">
-                <button>追加</button>
-                </div>
             </form>            
         </h1>
         <p>

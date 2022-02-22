@@ -22,7 +22,7 @@ command P を押す
 ・dockerの停止
 docker-compose down
 
-・dockerのスタート
+do・dockerのスタート
 docker-compose up -d
 
 ・dockerが動いているか

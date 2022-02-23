@@ -1,22 +1,65 @@
-.red {
-    color: red;
+.color {
+    background-color: rgba(123, 204, 233, 0.379);
+    border-radius: 10px;
+    padding: 10px;              /* 余白指定 */   /* 背景色指定 */
+    display:  table-cell;       /* テーブルセルにする */
+    vertical-align:  middle;    /* 中央寄せ */
+    height: 40px;              /* 高さ指定 */
+    width: 500px;               /* 幅指定 */
+    font-size: 10px;
 }
 
 .form {
-    /*コレ*/text-align: left;
-    border: 1px solid #999;
+    width: 250px;               /* 幅指定 */
+    height: 10px;              /* 高さ指定 */
+    border-radius: 40px;
+    vertical-align: middle;
     padding: 10px;
-    background: aquamarine;
-    // margin-top:10px;;
-    border-radius:10px 30px 50px 70px;
+    font-size: 15px;
+}
+
+
+.button{
+    border-radius: 40px; 
+    
+}
+
+.paragraph {
+    background-color: rgba(127, 255, 212, 0.612);
+    border-radius: 10px;
+    vertical-align: middle;
+    width: 500px;
+    // font-size: 15px;
+    height: 200px;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.middle {
+    text-align: center;
+    font-size: 20px;
+    color: darkgrey;
+}
+
+
+.paragraph2 {
+    background-color: rgba(255, 255, 127, 0.214);
+    border-radius: 10px;
+    vertical-align: middle;
+    width: 500px;
+    // font-size: 15px;
+    height: 200px;
+    padding: 10px;
+    font-size: 10px;
+}
+
+
+.bottom {
+    text-align: center;
+    font-size: 20px;
+    color: darkgrey;
 }
 
 
 
 
-
-.background {
-    background-color: aquamarine;
-    margin: 100px;
-    padding: 50px;
-}

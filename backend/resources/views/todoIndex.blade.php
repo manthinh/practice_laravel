@@ -9,21 +9,28 @@
     </head>
     <body>
         {{-- ここから --}}
-        <h1>
-            <form>
-                <div class="form">
-                    <label for= "uname"></label>
-                    <input type= "text" id="uname" name= "name">
-                    <button>追加</button>
-                </div>
-
-            </form>            
+        <h1 class="color">
+            <textarea class="form" placeholder="To doを入力"></textarea>
+            <button class="button">追加</button>    
         </h1>
+        
         <p>
-            <div class="background">
-                テスト
+            <div class="paragraph">
+            <h1 class="middle">未完了のtodo</h1>
+            <h2>
+            ・Todoです <button class="button">完了</button> <button class="button">削除</button>
+            <br>・fdfasfaf <button class="button">完了</button> <button class="button">削除</button>
+            <br>・dsdsdsf <button class="button">完了</button> <button class="button">削除</button>
+            </h2>
             </div>
         </p>
+        <p>
+            <div class="paragraph2">
+                <h1 class="bottom">完了したtodo</h1>
+                ・todoでした　<button class="button">戻す</button>
+            </p>
+
+        
         {{-- ここまで --}}
     </body>
 </html>

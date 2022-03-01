@@ -21,15 +21,7 @@
     </body>
 
 <?php
-if(isset($_POST['user'])) {
-    $dsn='mysql:dbname=users;charset=utf8';
-    $username='phper';
-    $password='secret';
-    $dbh = new PDO($dsn,$user,$password);
-    $stmt = $dbh->prepare("INSERT INTO USER VALUES(:user,:password)");
-    $stmt->bindParam(':user',$_POST['user']);
-    $stmt->bindParam(':password',$_POST['password']);
-    $stmt->execute();
-}
+
+
 
 

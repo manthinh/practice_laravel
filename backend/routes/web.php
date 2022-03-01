@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/todoIndex', [App\Http\Controllers\HomeController::class, 'todoIndex'])->name('todoIndex');
+Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');

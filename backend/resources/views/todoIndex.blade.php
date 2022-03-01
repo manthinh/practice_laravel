@@ -8,7 +8,6 @@
         {{-- <link rel="stylesheet" href="resources/css/todoIndex.css'" /> --}}
     </head>
     <body>
-        {{-- ここから --}}
         <h1 class="color">
             <textarea class="form" placeholder="To doを入力"></textarea>
             <button class="button">追加</button>    
@@ -29,8 +28,7 @@
                 <h1 class="bottom">完了したtodo</h1>
                 ・todoでした　<button class="button">戻す</button>
             </p>
-
-        
-        {{-- ここまで --}}
     </body>
-</html>
+            {{-- ここまで
+             </body>
+{{-- </html> --}}  --}}

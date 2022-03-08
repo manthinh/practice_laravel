@@ -6,21 +6,32 @@
         <title>Laravel</title>
         <link rel="stylesheet" href="{{ mix('css/todoIndex.css') }}">
     </head>
-    <body>
-        <h1>
-            ログインフォーム<br>
-        </h1>
-        <ul>
-            <input type="text" placeholder="ユーザー名" class=user><br>
-            <input type="password" name="pass" placeholder="パスワード" class=pass><br>
-            <p>
-                <input type="submit" value="Sign up" class=button>
-            </p>
-        </ul>                                               
-
+    <body>          <h1>ログイン</h1>        <hr>           
+                <form action="list.html" method="get">
+                    <tr>
+                        <th>
+                            ユーザID
+                        </th>
+                        <td>
+                            <input type="text" name="user_id" value="" size="24"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            パスワード
+                        </th>
+                        <td>
+                            <input type="password" name="password" value="" size="24">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><br>
+                            <input type="submit" value="ログイン" class = button>
+                    </tr>
+                </form>
+            </table>
+        </div>
     </body>
-
-<?php
 
 
 

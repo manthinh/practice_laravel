@@ -6,14 +6,39 @@
         <title>Laravel</title>
         <link rel="stylesheet" href="{{ mix('css/todoIndex.css') }}">
     </head>
-    <body>
-        <h1 class= login>
-            ログイン
-        </h1>
-        <div class= movement>
-            <p>
-                <a href="menu">ログイン画面</a>
-            </p>
-        </div>
-    </body>
-</html>
+ 
+@section('title', 'ログイン')
+ 
+@section('content')
+<p></p>
+<h1>ログイン</h1>
+<p></p>
+ 
+{{-- エラーメッセージ --}}
+@if (isset($login_error))
+  <div id="error_explanation" class="text-danger">
+    <ul>
+      <li>メールアドレスまたはパスワードが一致しません。</li>
+    </ul>
+  </div>
+@endif
+<p></p>
+ 
+{{-- フォーム --}}
+<form action="{{ url('admin_login') }}" method="post">
+  @csrf  
+  <div class="form-group">
+    <label for="user_email">{{ trans('validation.attributes.email') }}</label>
+    <input type="text" class="form-control" id="user_email" name="email">
+  </div>     
+  <div class="form-group">
+    <label for="user_password">{{ trans('validation.attributes.password') }}</label>
+    <input type="password" class="form-control" id="user_password" name="password">
+  </div>     
+  <input type="submit" value="ログインする" class="btn btn-primary">  
+</form>  
+<p><br></p>
+@endsection
+
+
+

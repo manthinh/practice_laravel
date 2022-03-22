@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-Route::get('/todoIndex', [App\Http\Controllers\HomeController::class, 'todoIndex'])->name('todoIndex');
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
+Route::post('/login', [App\Http\Controllers\LoginController::class, 'pass'])->name('pass');
+Route::post('/login', [App\Http\Controllers\LoginController::class, 'connect'])->name('connect');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::post('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');
+Route::get('/todoIndex', [App\Http\Controllers\HomeController::class, 'todoIndex'])->name('todoIndex');
+
 
 
 

@@ -4,36 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+
+
 
 class LoginController extends controller
 {
-    public function login(Request $request)
+    public function login() 
     {
-        $user = User::where('name', $request->name)->get();
-        if (count($user) === 0){
-            return view('login', ['login_error' => '1']);
+        return view('login');
+
     }
-if (Hash::check($request->password, $user[0]->password)) {
-    session(['name'  => $user[0]->name]);
-}
-if (Hash::check($request->password, $user[0]->password)) {
-
-    session(['name'  => $user[0]->name]);
-
-    session()->flash('flash_flg', 1);
-            session()->flash('flash_msg', 'ログインしました。');
-
-            return redirect(url('/'));
-
-        }else{
-            return view('login', ['login_error' => '1']);
-        }
-    } 
-    public function logout(Request $request)
+    public function connect(Request $request)
     {
-        session()->forget('name');
-        return redirect(url('/'));
-    }  
+        $id1 = $request->input('user_id');
+        $pass1 = $request->input('password');
+        $id2 = User::where('id','<',3)->get()->pluck('name','password');
+        // dd($id2);        
+        foreach($id2 as $name)
+        // dd($name);
+        if($id2 === 0)
+    {
+        return view('login', ['login_error' => '1']);
+    }
+    }
 }
+    // public function pass(Request $request)
+    // {
+    //     $pass = $request->input('password');
+    //     $User = User::find('password');
+    //     dd($User);
+    //     if(Hash::check($User->password,$pass)) {
+    //         echo '一致しています';
+    //     } else {
+    //         echo '一致していません';
+    //     }
+    // }
+    

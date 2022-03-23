@@ -37,7 +37,7 @@ class LoginController extends controller
             echo "ログイン成功";
         } else 
         {
-            echo "ユーザー名とパスワードが一致しません";
+            echo "ユーザー名が違う、もしくはパスワードが違います。";
         }
     
     }

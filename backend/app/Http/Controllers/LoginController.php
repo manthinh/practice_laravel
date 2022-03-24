@@ -31,13 +31,16 @@ class LoginController extends controller
         // dd($name,$password);
         if($id1 === $name && $pass1 === $password)
         {
-            echo "ログイン成功";
-        } else if($id1 === $name2 && $pass1 === $password2) 
+            header('Location: http://localhost:8080/todoIndex');
+            exit();;
+        } else if($id1 === $name2 && $id2 === $password2) 
         {
-            echo "ログイン成功";
+            header('Location: http://localhost:8080/todoIndex');
+            exit();;
         } else 
         {
-            echo "ユーザー名が違う、もしくはパスワードが違います。";
+            header('Location: http://localhost:8080/login');
+            exit();
         }
     
     }

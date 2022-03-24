@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td colspan="2"><br>
-                    <input type="submit" value="ログイン" class = button　onclick="location.href='./todoIndex'">
+                    <input type="submit" value="ログイン" class = button>
             </tr>
         </form>
     </body>

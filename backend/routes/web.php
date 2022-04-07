@@ -21,9 +21,11 @@ Route::get('/', function () {
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'pass'])->name('pass');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'connect'])->name('connect');
+Route::get('/create', [App\Http\Controllers\CreateController::class, 'create'])->name('create');
+Route::post('/create', [App\Http\Controllers\CreateController::class, 'NewCreate'])->name('NewCreate');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
-Route::post('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');
 Route::get('/todoIndex', [App\Http\Controllers\HomeController::class, 'todoIndex'])->name('todoIndex');
+Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');
 
 
 

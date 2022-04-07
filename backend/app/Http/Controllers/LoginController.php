@@ -17,43 +17,53 @@ class LoginController extends controller
     }
     public function connect(Request $request)
     {
-        $id1 = $request->input('user_id');
-        $pass1 = $request->input('password');
-        $id2 = User::where('id',1)->get()->pluck('name');
-        $id3 = User::where('id',1)->get()->pluck('password');
-        $id4 = User::where('id',2)->get()->pluck('name');
-        $id5 = User::where('id',2)->get()->pluck('password');
-        // dd($id2,$id3);        
-        foreach($id2 as $name)
-        foreach($id3 as $password)
-        foreach($id4 as $name2)
-        foreach($id5 as $password2)
-        // dd($name,$password);
-        if($id1 === $name && $pass1 === $password)
+        // $id1 = $request->input('user_id');
+        // $pass1 = $request->input('password');
+        // $id2 = User::where('id',1)->get()->pluck('name');
+        // $id3 = User::where('id',1)->get()->pluck('password');
+        // $id4 = User::where('id',2)->get()->pluck('name');
+        // $id5 = User::where('id',2)->get()->pluck('password');
+        // // dd($id2,$id3);        
+        // foreach($id2 as $name)
+        // foreach($id3 as $password)
+        // foreach($id4 as $name2)
+        // foreach($id5 as $password2)
+        // dd($name,$password,$name2,$password2);
+        // if($id1 === $name && $pass1 === $password)
+        // {
+        //     // echo "ログイン成功";
+        //     header('Location: http://localhost:8080/todoIndex');
+        //     exit();;
+        // } 
+        // else if($id1 === $name2 && $id2 === $password2) 
+        // {
+        //     // echo "ログイン成功";
+        //     header('Location: http://localhost:8080/todoIndex');
+        //     exit();;
+        // } else 
+        // {
+        //     header('Location: http://localhost:8080/login');
+        //     exit();
+        // }
+        
+        $userName = $request->input('user_id');
+        $pass = $request->input('password');
+        $user = User::where('name',$userName)->first();
+        // dd($user->name,$user->password);
+        if($user === null)
         {
-            header('Location: http://localhost:8080/todoIndex');
-            exit();;
-        } else if($id1 === $name2 && $id2 === $password2) 
-        {
-            header('Location: http://localhost:8080/todoIndex');
-            exit();;
-        } else 
-        {
-            header('Location: http://localhost:8080/login');
-            exit();
+            return view('login');
         }
+
+        if($user->name === $userName && $user->password === $pass)
+        {
+            return view('todoIndex');
+        } 
+        session()->flash('flash_message', 'ユーザー名とパスワードが一致しません');
+        return view('login');
     
     }
+    
+    
 }
-    // public function pass(Request $request)
-    // {
-    //     $pass = $request->input('password');
-    //     $User = User::find('password');
-    //     dd($User);
-    //     if(Hash::check($User->password,$pass)) {
-    //         echo '一致しています';
-    //     } else {
-    //         echo '一致していません';
-    //     }
-    // }
     

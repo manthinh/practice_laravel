@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
-    public function menu() 
+    public function menu()
     {
-        print('ログイン成功');
+        $menu = view('menu');
+        $test = User::where('id', 1)->first();
+        return $menu;
+        dd($test);
     }
 }

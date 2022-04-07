@@ -10,7 +10,9 @@
     <body>
         <h1 class="color">
             <textarea class="form" placeholder="To doを入力"></textarea>
-            <button class="button">追加</button>    
+            <a href="http://localhost:8080/create">
+                <button class="button">新規作成</button>
+            </a>
         </h1>
         
         <p>

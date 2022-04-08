@@ -17,7 +17,7 @@ class CreateController extends Controller
     public function NewCreate(Request $request)
     {
         $create = $request->input('comment');
-        $NewCreate = User::create(['name','email' => $create]);
+        $NewCreate = User::insert(['id' => $create]);
         dd($create,$NewCreate);
     }
     

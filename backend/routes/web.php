@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ Route::post('/create', [App\Http\Controllers\CreateController::class, 'NewCreate
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/todoIndex', [App\Http\Controllers\HomeController::class, 'todoIndex'])->name('todoIndex');
 Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');
+
+
+
+Route::get('/post', [PostController::class, 'index'])->name('index');
+Route::post('/tweet', [PostController::class, 'tweet'])->name('tweet');
+
 
 
 

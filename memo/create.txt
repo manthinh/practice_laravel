@@ -3,3 +3,13 @@ CRUDのC
 新規登録ボタンを作る、それをクリックすると新規作成ページに遷移してフォームに入力した値が反映される。
 
 例：Laravel blade php（foreach,ifみたいな) って調べたら出やすい。
+
+twitterテーブルがいる。テキストカラム、
+デフォルトでidが入る。投稿した日時がいる。
+
+twitterテーブル
+id : int型
+text :　string型
+投稿日時　: timestamp型
+
+

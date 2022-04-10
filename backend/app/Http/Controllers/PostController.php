@@ -14,9 +14,18 @@ class PostController extends Controller
 
     public function tweet(Request $request)
     {
-        $article = new Post();
-        $article->text = $request->input('tweet');
-        $article->save();
+        $POST = new Post();
+        $POST->text = $request->input('tweet');
+        $POST->save();
         return redirect()->route('index');
     }
+
+    public function tweet_view(Request $request)
+    {
+        $articles = Post::all();
+        return view('post.tweet_view');
+        // dd($articles);
+        
+    }
+    
 }

@@ -32,6 +32,8 @@ Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name(
 
 Route::get('/post', [PostController::class, 'index'])->name('index');
 Route::post('/tweet', [PostController::class, 'tweet'])->name('tweet');
+Route::get('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_view');
+Route::post('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_view');
 
 
 

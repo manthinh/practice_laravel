@@ -6,15 +6,21 @@
         <title>Laravel</title>
     </head>
     <body>
-        <h1>新規登録表示</h1>
 
+    <center>
+        <h1>新規登録表示ページ</h1>
+    </center>
+    @foreach ($tweets as $tweet)    
+    <center>
+        <li>{{ $tweet }}</li>
+    </center>
+    @endforeach
+    @foreach ($tweetDays as $tweetDay)  
+    <center>
+        <a>{{ date('Y年m月d日',  strtotime($tweetDay)); }}</a>
+    </center>
+    @endforeach 
+    
 
-
-<h1>新規登録表示ページ</h1>
-@foreach ($tweets as $tweet)    
-<p>{{ $tweet }}</p>
-@endforeach
-{{-- @endsection --}}
-
-</body>
+    </body>
 </html>

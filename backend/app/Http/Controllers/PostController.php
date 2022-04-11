@@ -23,8 +23,11 @@ class PostController extends Controller
     public function tweet_view()
     {
         $tweets = Post::pluck('text');
+        $tweetDays = Post::pluck('created_at');
         // dd($tweets);
-        return view('post.tweet_view',compact('tweets'));
+        return view('post.tweet_view',compact('tweets','tweetDays'));
+        // return view('post.tweet_view',compact('tweets'));
+       
         
     }
     

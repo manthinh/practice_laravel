@@ -22,8 +22,11 @@ class PostController extends Controller
 
     public function tweet_view()
     {
-        $tweets = Post::all();
-        return view('post.tweet_view',compact('tweets'));
+        $tweets = Post::get()->pluck('text');
+        // dd($tweets);
+        foreach($tweets as $tweet) 
+        // dd($tweet);
+        return view('post.tweet_view',compact('tweet'));
         // dd($articles);
         
     }

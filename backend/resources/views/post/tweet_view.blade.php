@@ -12,7 +12,7 @@
 
 <h1>新規登録表示ページ</h1>
 {{-- @foreach ($articles as $article)     --}}
-<p>{{ $tweets }}</p>
+<p>{{ $tweet }}</p>
 {{-- @endforeach --}}
 {{-- @endsection --}}
 

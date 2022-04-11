@@ -17,7 +17,7 @@
     @endforeach
     @foreach ($tweetDays as $tweetDay)  
     <center>
-        <a>{{ date('Y年m月d日',  strtotime($tweetDay)); }}</a>
+        <a>{{ date('Y年m月d日H時i分s秒',  strtotime($tweetDay)); }}</a>
     </center>
     @endforeach 
     

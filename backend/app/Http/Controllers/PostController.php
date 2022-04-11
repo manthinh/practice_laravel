@@ -20,10 +20,10 @@ class PostController extends Controller
         return redirect()->route('index');
     }
 
-    public function tweet_view(Request $request)
+    public function tweet_view()
     {
-        $articles = Post::all();
-        return view('post.tweet_view');
+        $tweets = Post::all();
+        return view('post.tweet_view',compact('tweets'));
         // dd($articles);
         
     }

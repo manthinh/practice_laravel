@@ -11,9 +11,9 @@
 
 
 <h1>新規登録表示ページ</h1>
-{{-- @foreach ($articles as $article)     --}}
+@foreach ($tweets as $tweet)    
 <p>{{ $tweet }}</p>
-{{-- @endforeach --}}
+@endforeach
 {{-- @endsection --}}
 
 </body>

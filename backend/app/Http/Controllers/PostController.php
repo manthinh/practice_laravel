@@ -14,20 +14,17 @@ class PostController extends Controller
 
     public function tweet(Request $request)
     {
-        $POST = new Post();
-        $POST->text = $request->input('tweet');
-        $POST->save();
+        $post = new Post();
+        $post->text = $request->input('tweet');
+        $post->save();
         return redirect()->route('index');
     }
 
     public function tweet_view()
     {
-        $tweets = Post::pluck('text');
-        $tweetDays = Post::pluck('created_at');
+        $tweets = Post::all();
         // dd($tweets);
-        return view('post.tweet_view',compact('tweets','tweetDays'));
-        // return view('post.tweet_view',compact('tweets'));
-       
+        return view('post.tweet_view',compact('tweets'));
         
     }
     

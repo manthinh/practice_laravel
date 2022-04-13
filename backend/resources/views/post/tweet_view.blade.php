@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ mix('css/tweet_view.css') }}" />
         <title>Laravel</title>
     </head>
     <body>
@@ -10,17 +11,53 @@
     <center>
         <h1>新規登録表示ページ</h1>
     </center>
-    @foreach ($tweets as $tweet)    
-    <center>
-        <li>{{ $tweet }}</li>
-    </center>
-    @endforeach
-    @foreach ($tweetDays as $tweetDay)  
-    <center>
-        <a>{{ date('Y年m月d日H時i分s秒',  strtotime($tweetDay)); }}</a>
-    </center>
-    @endforeach 
-    
 
+
+    @foreach ($tweets as $tweet)    
+        <div>{{ $tweet->text }} : {{ $tweet->created_at->format('Y年m月d日')}}</div>
+    @endforeach
+    <hr>
+    @foreach ($tweets as $tweet)
+    <div>
+        <span>{{ $tweet->text }}</span>
+        <span>{{ $tweet->created_at->format('Y年m月d日')}}</span>
+    </div>    
+    @endforeach
+    <hr>
+    @foreach ($tweets as $tweet)
+    <div class="flex">
+        <div>{{ $tweet->text }}</div>
+        <div>{{ $tweet->created_at->format('Y年m月d日')}}</div>
+    </div>    
+    @endforeach
+    <hr>
+    @foreach ($tweets as $tweet)
+    <dl>
+        <dt>
+            {{ $tweet->text }}
+        </dt>
+        <dd>
+            {{ $tweet->created_at->format('Y年m月d日')}}
+        </dd>
+    </dl>
+    <div>
+    </div>    
+    @endforeach
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Tweet集</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($tweets as $tweet)
+            <tr>
+                <th>{{ $tweet->text }}</th>
+                <td>{{ $tweet->created_at->format('Y年m月d日')}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
     </body>
 </html>

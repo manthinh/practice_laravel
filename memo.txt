@@ -32,7 +32,7 @@ docker-compose ps
 docker compose exec app bash
 
 ・cssを反映させる
-npm run watchs
+npm run watch
 
 ・npm run watch を中止させる
 コントロール + C

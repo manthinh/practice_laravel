@@ -54,6 +54,8 @@
             @foreach ($tweets as $tweet)
             <tr>
                 <th>{{ $tweet->text }}</th>
+                <td><a href="/tweet_view/detail/{{$tweet->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
+                <td><a href="/tweet_view/edit/{{$tweet->id}}"><button type="button" class="btn btn-primary">編集</button></a></td>
                 <td>{{ $tweet->created_at->format('Y年m月d日')}}</td>
             </tr>
             @endforeach

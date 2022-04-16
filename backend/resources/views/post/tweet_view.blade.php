@@ -13,7 +13,7 @@
     </center>
 
 
-    @foreach ($tweets as $tweet)    
+    {{-- @foreach ($tweets as $tweet)    
         <div>{{ $tweet->text }} : {{ $tweet->created_at->format('Y年m月d日')}}</div>
     @endforeach
     <hr>
@@ -42,7 +42,8 @@
     </dl>
     <div>
     </div>    
-    @endforeach
+    @endforeach --}}
+    <center>
     <hr>
     <table>
         <thead>
@@ -61,5 +62,6 @@
             @endforeach
         </tbody>
     </table>
+    </center>
     </body>
 </html>

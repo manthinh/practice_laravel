@@ -36,8 +36,12 @@ class PostController extends Controller
 
     public function detail()
     {
-        $detail = new Post();
-        dd($detail);
+        return view('post.detail');
+    }
+
+    public function edit()
+    {
+        return view('post.edit');
     }
     
 }

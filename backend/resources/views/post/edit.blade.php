@@ -8,6 +8,15 @@
     </head>
     <body>
 
-    <center>
+    
         <h1>編集</h1>
-    </center>
+        <form action="edit" method="GET">
+            @csrf
+            <tr>
+            <input type="text" name="edit" value="" size="48"></p>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><br>
+                <input type="submit" value="編集する" class = button>
+            </tr>

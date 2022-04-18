@@ -41,7 +41,18 @@ class PostController extends Controller
 
     public function edit()
     {
+        $edit = Post::all();
         return view('post.edit');
     }
     
+
+    public function update(Request $request)
+    {
+        $edit = Post::all();
+        $edit->edit = $request->input('edit');
+        $edit->save();
+        
+        return redirect('/')->with('success', '更新しました');
+
+    }
 }

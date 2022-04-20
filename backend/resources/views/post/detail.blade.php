@@ -10,4 +10,6 @@
 
     <center>
         <h1>詳細</h1>
+        <form action="detail" method="GET">
+            @csrf
     </center>

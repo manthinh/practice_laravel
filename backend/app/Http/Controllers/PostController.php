@@ -39,20 +39,16 @@ class PostController extends Controller
         return view('post.detail');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        $edit = Post::all();
-        return view('post.edit');
+        $edit = Post::find($id);
+        // dd($edit);
+        return view('post.detail', compact('detail'));
     }
     
 
     public function update(Request $request)
     {
-        $edit = Post::all();
-        $edit->edit = $request->input('edit');
-        $edit->save();
         
-        return redirect('/')->with('success', '更新しました');
-
     }
 }

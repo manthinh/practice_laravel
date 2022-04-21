@@ -43,7 +43,7 @@ class PostController extends Controller
     {
         $edit = Post::find($id);
         // dd($edit);
-        return view('post.detail', compact('detail'));
+        return view('post.edit',compact('edit'));
     }
     
 

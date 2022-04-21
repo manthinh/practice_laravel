@@ -12,10 +12,13 @@
         <h1>編集</h1>
         <form action="edit" method="GET">
             @csrf
+
+            
+            <th>{{ $edit->text }}</th>
             <tr>
             <input type="text" name="edit" value="" size="48"></p>
             </tr>
-            
+
             <tr>
                 <td colspan="2"><br>
                 <input type="submit" value="編集する" class = button>

@@ -23,4 +23,4 @@
                 <td colspan="2"><br>
                 <input type="submit" value="編集する" class = button>
             </tr>
-            
+            @if (session('status'))<div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">{{ session('status') }}</div>@endif

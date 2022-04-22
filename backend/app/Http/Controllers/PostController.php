@@ -41,14 +41,18 @@ class PostController extends Controller
 
     public function edit($id)
     {
-        $edit = Post::find($id);
+        $edit = Post::findOrFail($id);
         // dd($edit);
         return view('post.edit',compact('edit'));
     }
-    
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        
-    }
+    $editOfData = Post::findOrFail($id);
+    $editOfData->text = $request->input('text');
+    $editOfData->save();
+    #return redirect('greeting',['status' => 'UPDATE完了！']);　←error!
+    return redirect('complete')->with('status', 'UPDATE完了!');
+        }
+    
 }

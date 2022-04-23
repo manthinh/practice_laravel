@@ -43,7 +43,7 @@ class PostController extends Controller
     {
         $edit = Post::findOrFail($id);
         // dd($edit);
-        return view('post.edit',compact('edit'));
+        return view('post.edit',['text'=>'編集フォーム','data' => $edit]);
     }
 
     public function update(Request $request,$id)

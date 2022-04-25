@@ -10,17 +10,14 @@
 
     
         <h1>編集</h1>
-        <form action="edit" method="GET">
+        <form action="{{ route('update', $edit->id) }}" enctype="multipart/form-data" method="POST" id="new">
             @csrf
-
-            
-            <th>{{ $edit->text }}</th>
+            @method('PUT')
             <tr>
             <input type="text" name="edit" value="" size="48"></p>
             </tr>
-
+            
             <tr>
                 <td colspan="2"><br>
                 <input type="submit" value="編集する" class = button>
             </tr>
-            

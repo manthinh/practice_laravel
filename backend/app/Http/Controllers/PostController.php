@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -43,16 +44,19 @@ class PostController extends Controller
     {
         $edit = Post::findOrFail($id);
         // dd($edit);
-        return view('post.edit',['text'=>'編集フォーム','data' => $edit]);
+        return view('post.edit',compact('edit'));
     }
 
     public function update(Request $request,$id)
     {
     $editOfData = Post::findOrFail($id);
     $editOfData->text = $request->input('text');
+    dd($editOfData->text);
+
+
     $editOfData->save();
     #return redirect('greeting',['status' => 'UPDATE完了！']);　←error!
-    return redirect('complete')->with('status', 'UPDATE完了!');
+    return redirect('/')->with('status', 'UPDATE完了!');
         }
     
 }

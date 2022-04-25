@@ -8,16 +8,16 @@
     </head>
     <body>
 
-    
+        @section('post_edit')
         <h1>編集</h1>
-        <form action="{{ route('update', $edit->id) }}" enctype="multipart/form-data" method="POST" id="new">
-            @csrf
-            @method('PUT')
+        <form action='{{ route('update') }}' method='post'>
+            {{ csrf_field() }}
             <tr>
-            <input type="text" name="edit" value="" size="48"></p>
+            <input type="hidden" name="id" value='{{ $edit->text }}' size="48"></p>
             </tr>
             
             <tr>
                 <td colspan="2"><br>
                 <input type="submit" value="編集する" class = button>
             </tr>
+        @endsection

@@ -37,7 +37,10 @@ Route::get('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_vi
 Route::post('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_view');
 Route::get('/tweet_view/detail/{id}', [PostController::class, 'detail'])->name('detail');
 Route::get('/tweet_view/edit/{id}', [PostController::class, 'edit'])->name('edit');
-Route::get('/tweet_view/edit/{id}', [PostController::class, 'update'])->name('update');
+Route::post('/tweet_view/edit/{id}', [PostController::class, 'update'])->name('update');
+
+// Route::get('/tweet_view/edit/{id}', 'PostController@edit')->name('post_edit');
+// Route::post('/tweet_view/edit/{id}', 'PostController@update')->name('post_update');
 // Route::resource('/tweet_view', App\Http\Controllers\PostController::class)->only(['edit','update']);
 // Route::get('/tweet_view/edit/{id}', 'PostController@edit');
 // Route::patch('/complete/update/{id}','PostController@update');

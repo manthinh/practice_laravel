@@ -49,12 +49,11 @@ class PostController extends Controller
 
     public function update(Request $request,$id)
     {
-    $editOfData = Post::findOrFail($id);
-    $editOfData->text = $request->input('text');
-    dd($editOfData->text);
-
-
-    $editOfData->save();
+    $edit = Post::find($id);
+    dd($edit);
+    $edit->text = $request->input('text');
+    // dd($edit->text);
+    $edit->save();
     #return redirect('greeting',['status' => 'UPDATE完了！']);　←error!
     return redirect('/')->with('status', 'UPDATE完了!');
         }

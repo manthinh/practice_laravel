@@ -8,9 +8,9 @@
     </head>
     <body>
 
-        @section('edit')
+        @section('/tweet_view/edit/{id}')
         <h1>編集</h1>
-        <form action='{{ route('update') }}' method='post'>
+        <form action='{{ route('/tweet_view/update/{id}') }}' method='post'>
             {{ csrf_field() }}
             <tr>
             <input type="hidden" name="id" value='{{ $edit->id }}' size="48"></p>
@@ -21,3 +21,4 @@
                 <input type="submit" value="編集する" class = button>
             </tr>
         @endsection
+        @yield('/tweet_view/edit/{id}')

@@ -15,7 +15,7 @@
             <tr>
             <input type="hidden" name="id" value='{{ $edit->id }}' size="48"></p>
             </tr>
-            内容：<input type='text' name='content' value='{{ $edit->content }}'><br>
+            内容：<input type='text' name='content' value='{{ $edit->contents }}'><br>
             <tr>
                 <td colspan="2"><br>
                 <input type="submit" value="編集する" class = button>

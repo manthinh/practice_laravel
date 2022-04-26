@@ -40,17 +40,17 @@ class PostController extends Controller
         return view('post.detail');
     }
 
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $edit = Post::find($id);
+        $edit = Post::find($request->id);
         // dd($edit);
         return view('post.edit',['text'=>$edit]);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request)
     {
-    $edit = Post::find($id);
-    // dd($edit);
+    $edit = Post::find($request->id);
+    dd($edit);
     $edit->contents = $request->input('contents');
     // dd($edit->text);
     $edit->save();

@@ -37,7 +37,9 @@ Route::get('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_vi
 Route::post('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_view');
 Route::get('/tweet_view/detail/{id}', [PostController::class, 'detail'])->name('detail');
 Route::get('/tweet_view/edit/{id}', [PostController::class, 'edit'])->name('edit');
-Route::post('/tweet_view/edit/{id}', [PostController::class, 'update'])->name('update');
+Route::post('/update', [PostController::class, 'update'])->name('update');
+
+
 
 // Route::get('/tweet_view/edit/{id}', 'PostController@edit')->name('post_edit');
 // Route::post('/tweet_view/edit/{id}', 'PostController@update')->name('post_update');

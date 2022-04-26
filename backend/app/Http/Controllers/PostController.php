@@ -44,7 +44,7 @@ class PostController extends Controller
     {
         $edit = Post::find($request->id);
         // dd($edit);
-        return view('post.edit',['text'=>$edit]);
+        return view('post.edit',['edit'=>$edit]);
     }
 
     public function update(Request $request)

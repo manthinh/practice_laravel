@@ -10,15 +10,17 @@
 
         @section('/tweet_view/edit/{id}')
         <h1>編集</h1>
-        <form action='{{ route('/tweet_view/update/{id}') }}' method='post'>
+        @foreach ($edit as $editOfData)
+        <form action='{{ route('/tweet_view/update/{id}',$editOfData->id) }}' method='post'>
             {{ csrf_field() }}
             <tr>
-            <input type="hidden" name="id" value='{{ $edit->id }}' size="48"></p>
+            <input type="hidden" name="id" value='{{ $editOfData->id }}' size="48"></p>
             </tr>
-            内容：<input type='text' name='content' value='{{ $edit->contents }}'><br>
+            内容：<input type='text' name='content' value='{{ $editOfData->contents }}'><br>
             <tr>
                 <td colspan="2"><br>
                 <input type="submit" value="編集する" class = button>
             </tr>
+            @endforeach
         @endsection
         @yield('/tweet_view/edit/{id}')

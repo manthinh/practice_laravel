@@ -40,21 +40,21 @@ class PostController extends Controller
         return view('post.detail');
     }
 
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $edit = Post::find($request->id);
+        $edit = Post::findOrFail($id);
         // dd($edit);
         return view('post.edit',['edit'=>$edit]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-    $edit = Post::find($request->id);
-    dd($edit);
+    $edit = Post::findOrFail($id);
+    // dd($edit);
     $edit->contents = $request->input('contents');
     // dd($edit->text);
     $edit->save();
-    return redirect('/')->with('status', 'UPDATE完了!');
+    return redirect('create')->with('status', 'UPDATE完了!');
     }
     
 }

@@ -14,7 +14,7 @@
             <li>
                 @foreach ($edit as $editOfData)
                     
-                <center><p>編集：{{$editOfData->text}}<br>
+                <center><p>編集：{{$editOfData}}<br>
                     <input type="text" name="comment" value="" size="24"></p>
                     @endforeach
                 </center>    

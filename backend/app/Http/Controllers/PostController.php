@@ -40,10 +40,12 @@ class PostController extends Controller
         return view('post.detail');
     }
 
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
         $edit = Post::findOrFail($id);
         // dd($edit);
+        $edit->contents = $request->input('contents');
+        dd($edit->contents);
         return view('post.edit',['edit'=>$edit]);
     }
 
@@ -52,7 +54,7 @@ class PostController extends Controller
     $edit = Post::findOrFail($id);
     // dd($edit);
     $edit->contents = $request->input('contents');
-    // dd($edit->text);
+    dd($edit->text);
     $edit->save();
     return redirect('create')->with('status', 'UPDATE完了!');
     }

@@ -50,6 +50,7 @@ class PostController extends Controller
     public function update(Request $request,$id)
     {
     $edit = Post::findOrFail($id);
+    dd($request->method());
     // dd($edit);
     $edit->contents = $request->input('contents');
     // dd($edit->text);

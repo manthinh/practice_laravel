@@ -14,19 +14,19 @@
         </center>
         <ul>
             <tr>
-                @foreach ($edit as $editOfData)
-                @endforeach
                 <center><p>編集<br>
-                    <form class="form-signin" role="form" method="post" action="/tweet_view/edit/{{$edit->id}}">
+                    <form class="form-signin" role="form" method="post" action="/tweet_view/update/{id}">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <input type="hidden" name="_method" value="PATCH">
+                        @method('PATCH')
+                        @csrf
 <input type="text" name="contents" value="{{ $edit->contents }}" class="form-control" placeholder="文字を入力してください" autofocus>
-                </center>    
-            </tr>
-            <tr>
-                <center>
-                    <td colspan="2"><br>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">編集</button>
+</center>    
+</tr>
+
+<tr>
+    <center>
+        <td colspan="2"><br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">編集</button>
                 </tr>
                 </center>
         </ul>

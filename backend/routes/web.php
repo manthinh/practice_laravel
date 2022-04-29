@@ -40,8 +40,6 @@ Route::get('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@edit')-
 Route::patch('tweet_view/update/{id}', 'PostController@update')->name('/tweet_view/update/{id}');
 // Route::post('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@update')->name('/tweet_view/update/{id}');
 // Route::get('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@edit')->name('/tweet_view/edit/{id}');
-
-
 // Route::get('/tweet_view/edit/{id}', 'PostController@edit')->name('post_edit');
 // Route::post('/tweet_view/edit/{id}', 'PostController@update')->name('post_update');
 // Route::resource('/tweet_view', App\Http\Controllers\PostController::class)->only(['edit','update']);

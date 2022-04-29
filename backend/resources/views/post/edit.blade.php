@@ -9,20 +9,24 @@
     <body>
 
         @section('/tweet_view/edit/{id}')
+        <center>
         <h1>編集</h1>
+        </center>
         <ul>
-            <li>
+            <tr>
                 @foreach ($edit as $editOfData)
-                
-                <center><p>編集：{{$editOfData}}<br>
-                    <input type="text" name="comment" value="" size="24"></p>
-                    @endforeach
+                @endforeach
+                <center><p>編集<br>
+                    <form class="form-signin" role="form" method="post" action="/tweet_view/edit/{{$edit->id}}">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input type="hidden" name="_method" value="PATCH">
+<input type="text" name="contents" value="{{ $edit->contents }}" class="form-control" placeholder="文字を入力してください" autofocus>
                 </center>    
-            </li>
+            </tr>
             <tr>
                 <center>
                     <td colspan="2"><br>
-                    <input type="submit" value="編集する" class = button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">編集</button>
                 </tr>
                 </center>
         </ul>

@@ -24,6 +24,6 @@
                 </tr>
                 </center>
         </ul>
-        @if (session('status'))<div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">{{ session('status') }}</div>@endif
+        {{-- @if (session('status'))<div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">{{ session('status') }}</div>@endif --}}
     </body>
 </html>

@@ -18,11 +18,11 @@ class PostController extends Controller
         $post = new Post();
         $post->text = $request->input('tweet');
         $post->save();
-        if($request->input('tweet') === null)
-        {
-            session()->flash('flash_message', '文字を入力してください。');
-            return view('tweet');
-        } 
+        // if($request->input('tweet') === null)
+        // {
+        //     session()->flash('flash_message', '文字を入力してください。');
+        //     return view('tweet');
+        // } 
         return redirect()->route('index');
     
     }
@@ -45,7 +45,7 @@ class PostController extends Controller
         $edit = Post::findOrFail($id);
         // dd($edit);
         $edit->contents = $request->input('contents');
-        dd($edit->contents);
+        // dd($edit->contents);
         return view('post.edit',['edit'=>$edit]);
     }
 
@@ -54,7 +54,7 @@ class PostController extends Controller
     $edit = Post::findOrFail($id);
     // dd($edit);
     $edit->contents = $request->input('contents');
-    dd($edit->text);
+    // dd($edit->text);
     $edit->save();
     return redirect('create')->with('status', 'UPDATE完了!');
     }

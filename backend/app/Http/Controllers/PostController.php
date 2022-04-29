@@ -55,7 +55,7 @@ class PostController extends Controller
     $edit->contents = $request->input('contents');
     $edit->save();
     // dd($edit->save());
-    return redirect('tweet_view');
+    return redirect('tweet_view')->with();
     }
     
 }

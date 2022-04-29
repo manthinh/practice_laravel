@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+// ログイン機能
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'pass'])->name('pass');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'connect'])->name('connect');
@@ -30,22 +31,19 @@ Route::get('/todoIndex', [App\Http\Controllers\HomeController::class, 'todoIndex
 Route::get('/menu', [App\Http\Controllers\MenuController::class, 'menu'])->name('menu');
 
 
-
+// CRUD機能
 Route::get('/post', [PostController::class, 'index'])->name('index');
 Route::post('/tweet', [PostController::class, 'tweet'])->name('tweet');
 Route::get('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_view');
 Route::post('/tweet_view', [PostController::class, 'tweet_view'])->name('tweet_view');
+
+// 詳細機能
 Route::get('/tweet_view/detail/{id}', [PostController::class, 'detail'])->name('detail');
+
+// 編集機能
 Route::get('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@edit')->name('/tweet_view/edit/{id}');
-Route::patch('tweet_view/update/{id}', 'PostController@update')->name('/tweet_view/update/{id}');
-// Route::post('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@update')->name('/tweet_view/update/{id}');
-// Route::get('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@edit')->name('/tweet_view/edit/{id}');
-// Route::get('/tweet_view/edit/{id}', 'PostController@edit')->name('post_edit');
-// Route::post('/tweet_view/edit/{id}', 'PostController@update')->name('post_update');
-// Route::resource('/tweet_view', App\Http\Controllers\PostController::class)->only(['edit','update']);
-// Route::get('/tweet_view/edit/{id}', 'PostController@edit');
-// Route::patch('/complete/update/{id}','PostController@update');
-// Route::get('/tweet_view/edit/{id}', [PostController::class, 'update'])->name('update');
+Route::patch('tweet_view/update/{id}', 'App\Http\Controllers\PostController@update')->name('/tweet_view/update/{id}');
+
 
 
 

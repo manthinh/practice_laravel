@@ -53,9 +53,9 @@ class PostController extends Controller
     dd($request->method());
     // dd($edit);
     $edit->contents = $request->input('contents');
-    // dd($edit->text);
     $edit->save();
-    return redirect('tweet_view')->with('status', 'UPDATE完了!');
+    // dd($edit->save());
+    return redirect('tweet_view');
     }
     
 }

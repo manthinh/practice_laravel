@@ -50,12 +50,11 @@ class PostController extends Controller
     public function update(Request $request,$id)
     {
     $edit = Post::findOrFail($id);
-    dd($request->method());
     // dd($edit);
     $edit->contents = $request->input('contents');
     $edit->save();
     // dd($edit->save());
-    return redirect('tweet_view')->with('contents',"アップデート完了");
+    return redirect('tweet_view')->with('status',"アップデート完了");
     }
     
 }

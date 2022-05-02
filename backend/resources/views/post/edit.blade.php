@@ -15,7 +15,7 @@
         <ul>
         <tr>
             <center><p>編集<br>
-                <form class="form-signin" role="form" method="post" action="/tweet_view/update/{id}">
+                <form class="form-signin" role="form" method="post" action="/tweet_view/update/{{$edit->id}}">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 @method('PATCH')
                 @csrf

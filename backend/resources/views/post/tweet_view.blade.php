@@ -58,7 +58,9 @@
                 <th>{{ $tweet->text }}</th>
                 <td><a href="/tweet_view/detail/{{$tweet->id}}"><button type="button" class="btn btn-success">詳細</button></a></td>
                 <td><a href="/tweet_view/edit/{{$tweet->id}}"><button type="button" class="btn btn-primary">編集</button></a></td>
-                <td>{{ $tweet->created_at->format('Y年m月d日')}}</td>
+                <td>作成日時：{{ $tweet->created_at->format('Y年m月d日')}}</td>
+                <td><a href="/tweet_view/delite/{{$tweet->id}}"><button type="button" class="btn btn-primary">削除</button></a></td>
+                
             </tr>
             @endforeach
         </tbody>

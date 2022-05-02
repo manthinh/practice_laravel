@@ -53,10 +53,11 @@ class PostController extends Controller
     {
     $edit = Post::findOrFail($id);
     // dd($edit);
+    $edit->text = $request->input('text');
     $edit->contents = $request->input('contents');
     $edit->save();
     // dd($edit->save());
-    return redirect('tweet_view')->with('status',"{$edit->text}の詳細を編集しました");
+    return redirect('tweet_view')->with('status',"{$edit->id}のつぶやきと詳細を編集しました");
     }
     
 }

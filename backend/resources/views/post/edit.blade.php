@@ -19,7 +19,8 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 @method('PATCH')
                 @csrf
-                <input type="text" name="contents" value="{{ $edit->contents }}" class="form-control" placeholder="文字を入力してください" autofocus>
+                <input type="text" name="text" value="{{ $edit->text }}" class="form-control" placeholder="つぶやきを入力してください" autofocus>
+                <input type="text" name="contents" value="{{ $edit->contents }}" class="form-control" placeholder="詳細を入力してください" autofocus>
             </center>    
         </tr>
 

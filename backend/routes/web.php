@@ -44,6 +44,9 @@ Route::get('/tweet_view/detail/{id}', [PostController::class, 'detail'])->name('
 Route::get('/tweet_view/edit/{id}', 'App\Http\Controllers\PostController@edit')->name('/tweet_view/edit/{id}');
 Route::patch('tweet_view/update/{id}', 'App\Http\Controllers\PostController@update')->name('/tweet_view/update/{id}');
 
+// 削除機能
+
+
 
 
 

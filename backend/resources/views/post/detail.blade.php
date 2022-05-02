@@ -9,7 +9,10 @@
     <body>
 
     <center>
-        <h1>詳細</h1>
+        <h1>{{$detail->text}}の詳細</h1>
         <form action="detail" method="GET">
             @csrf
+            <div>
+                {{$detail->contents}}
+            </div>
     </center>

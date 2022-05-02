@@ -35,9 +35,11 @@ class PostController extends Controller
         
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('post.detail');
+        $detail = Post::find($id);
+        // dd($detail);
+        return view('post.detail',['detail'=>$detail]);
     }
 
     public function edit(Request $request,$id)
@@ -54,7 +56,7 @@ class PostController extends Controller
     $edit->contents = $request->input('contents');
     $edit->save();
     // dd($edit->save());
-    return redirect('tweet_view')->with('status',"アップデート完了");
+    return redirect('tweet_view')->with('status',"{$edit->text}の詳細を編集しました");
     }
     
 }

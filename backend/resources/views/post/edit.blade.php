@@ -10,7 +10,7 @@
 
         @section('/tweet_view/edit/{id}')
             <center>
-                <h1>編集</h1>
+                <h1>{{$edit->text}}の編集</h1>
             </center>
         <ul>
         <tr>

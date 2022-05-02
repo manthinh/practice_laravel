@@ -7,10 +7,10 @@
         <title>Laravel</title>
     </head>
     <body>
-        @if (session('status'))<div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">{{ session('status') }}</div>@endif
-
-    <center>
-        <h1>新規登録表示ページ</h1>
+        
+        <center>
+            <h1>つぶやき表示ページ</h1>
+            @if (session('status'))<div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">{{ session('status') }}</div>@endif
     </center>
 
 

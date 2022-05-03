@@ -13,23 +13,23 @@
                 <h1>{{$edit->text}}の編集</h1>
             </center>
         <ul>
-        <tr>
-            <center><p>編集<br>
-                <form class="form-signin" role="form" method="post" action="/tweet_view/update/{{$edit->id}}">
-                <input type="hidden" name="_token" value="{{csrf_token()}}">
-                @method('PATCH')
-                @csrf
-                <input type="text" name="text" value="{{ $edit->text }}" class="form-control" placeholder="つぶやきを入力してください" autofocus>
-                <input type="text" name="contents" value="{{ $edit->contents }}" class="form-control" placeholder="詳細を入力してください" autofocus>
-            </center>    
-        </tr>
+            <tr>
+                <center><p>編集<br>
+                    <form class="form-signin" role="form" method="post" action="{{ route('update', $edit->id) }}">
+                    {{-- <input type="hidden" name="_token" value="{{csrf_token()}}"> --}}
+                    @method('PATCH')
+                    @csrf
+                    <input type="text" name="text" value="{{ $edit->text }}" class="form-control" placeholder="つぶやきを入力してください" autofocus>
+                    <input type="text" name="contents" value="{{ $edit->contents }}" class="form-control" placeholder="詳細を入力してください" autofocus>
+                </center>    
+            </tr>
 
-        <tr>
-            <center>
-                <td colspan="2"><br>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">編集</button>
-        </tr>
-            </center>
+            <tr>
+                <center>
+                    <td colspan="2"><br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">編集</button>
+                </center>
+            </tr>
         </ul>
     </body>
 </html>

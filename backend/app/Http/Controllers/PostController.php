@@ -60,4 +60,9 @@ class PostController extends Controller
     return redirect('tweet_view')->with('status',"{$edit->id}のつぶやきと詳細を編集しました");
     }
     
+    public function destroy($id)
+    {
+        $destroy = Post::where('id',$id)->delete();
+        return redirect('tweet_view')->with('status',"つぶやきと詳細を削除しました");
+    }
 }

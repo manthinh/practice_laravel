@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -16,13 +15,11 @@ class PostController extends Controller
     public function tweet(Request $request)
     {
         $post = new Post();
-        $post->text = $request->input('tweet');
-        $post->save();
-        // if($request->input('tweet') === null)
-        // {
-        //     session()->flash('flash_message', '文字を入力してください。');
-        //     return view('tweet');
-        // } 
+        // dd($post);
+        // $post->text = $request->input('tweet');
+        // $post->fill($request->all())->save();<-　1行で済むやつ
+        // $post->save();
+        $post = Post::create(['text' => $request->input('tweet')]);
         return redirect()->route('index');
     
     }
@@ -57,7 +54,7 @@ class PostController extends Controller
     $edit->contents = $request->input('contents');
     $edit->save();
     // dd($edit->save());
-    return redirect('tweet_view')->with('status',"{$edit->id}のつぶやきと詳細を編集しました");
+    return redirect()->route('tweet_view')->with('status',"{$edit->id}のつぶやきと詳細を編集しました");
     }
     
     public function destroy($id)

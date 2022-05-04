@@ -10,5 +10,5 @@ class Post extends Model
 {
     use HasFactory;
     protected $dates = ['created_at'];
-    protected $fillable = ['text'];
+    protected $fillable = ['text','user_id'];
 }

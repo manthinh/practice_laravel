@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 
 
@@ -49,6 +48,7 @@ class LoginController extends controller
         $userName = $request->input('user_id');
         $pass = $request->input('password');
         $user = User::where('name',$userName)->first();
+        // dd($user->id);
         // dd($user->name,$user->password);
         if($user === null)
         {
@@ -57,6 +57,7 @@ class LoginController extends controller
 
         if($user->name === $userName && $user->password === $pass)
         {
+            $request->session()->put('user',$user->id);
             return view('todoIndex');
         } 
         session()->flash('flash_message', 'ユーザー名とパスワードが一致しません');

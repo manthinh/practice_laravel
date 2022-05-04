@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
+
 
 class PostController extends Controller
 {
@@ -14,20 +16,25 @@ class PostController extends Controller
 
     public function tweet(Request $request)
     {
-        $post = new Post();
-        // dd($post);
+        // $post = new Post();
+        // $currentUser = $request->session()->get('user');
+        // dd($currentUser);
         // $post->text = $request->input('tweet');
-        // $post->fill($request->all())->save();<-　1行で済むやつ
         // $post->save();
-        $post = Post::create(['text' => $request->input('tweet')]);
+        // $post->fill($request->all())->save();<-　1行で済むやつ
+        $post = Post::create([
+            'text' => $request->input('tweet'),
+            'user_id' => $request->session()->get('user')
+            ]);
         return redirect()->route('index');
     
     }
 
-    public function tweet_view()
+    public function tweet_view(Request $request,$id)
     {
-        $tweets = Post::all();
-        // dd($tweets);
+        $tweets = Post::get();
+        $currentUser = $request->session()->get('user');
+        // dd($currentUser);
         return view('post.tweet_view',compact('tweets'));
         
     }

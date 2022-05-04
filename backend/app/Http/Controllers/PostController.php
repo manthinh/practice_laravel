@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\User;
 
 
 class PostController extends Controller
@@ -30,11 +29,11 @@ class PostController extends Controller
     
     }
 
-    public function tweet_view(Request $request,$id)
+    public function tweet_view(Request $request)
     {
-        $tweets = Post::get();
         $currentUser = $request->session()->get('user');
-        // dd($currentUser);
+        $tweets = Post::where('user_id',$currentUser)->get();
+        // dd($tweets);
         return view('post.tweet_view',compact('tweets'));
         
     }
@@ -55,8 +54,10 @@ class PostController extends Controller
 
     public function update(Request $request,$id)
     {
-    $edit = Post::findOrFail($id);
-    // dd($edit);
+    // $edit = Post::findOrFail($id);
+    $currentUser = $request->session()->get('user');
+    $edit = Post::where('user_id',$currentUser)->get();
+    dd($edit);
     $edit->text = $request->input('text');
     $edit->contents = $request->input('contents');
     $edit->save();
